@@ -26,26 +26,20 @@
   </head>
   <body>
     <div class="garden">
-        <div class="ball"></div>
-      <!--   <div class="ball"></div>
-        <div class="ball"></div>
-        <div class="ball"></div>
-        <div class="ball"></div>
-        <div class="ball"></div>
-        <div class="ball"></div>
-        <div class="ball"></div>
-        <div class="ball"></div>
-        <div class="ball"></div>
-        <div class="ball"></div>
-        <div class="ball"></div> -->
-      </div>
-      
-      <pre class="output"></pre>
-      <script>
-        var ball   = document.querySelector('.ball');
-        var garden = document.querySelector('.garden');
-        var output = document.querySelector('.output');
+    </div>
+    <pre class="output"></pre>
+    <script>
 
+      var garden = document.querySelector('.garden');
+      var output = document.querySelector('.output');
+
+      for (var i = 1; i > 25; i++) {
+        
+        var div = garden.createElement("div");
+        div.setAttribute("id", `ball-${i}`);
+
+        var ball = document.querySelector(`ball-${i}`);
+        console.log(ball);
         var maxX = garden.clientWidth  - ball.clientWidth;
         var maxY = garden.clientHeight - ball.clientHeight;
 
@@ -73,6 +67,7 @@
         }
 
         window.addEventListener('deviceorientation', handleOrientation);
-      </script>
+      }
+    </script>
   </body>
 </html>
